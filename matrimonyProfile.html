@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Matrimony Profile</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: #ffffff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .profile-section {
+            padding: 30px;
+            text-align: center;
+        }
+
+        .profile-section img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 6px solid #fff;
+            margin-top: -120px;
+            background: #fff;
+            object-fit: cover;
+        }
+
+        .name {
+            margin-top: 15px;
+            font-size: 26px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .subtitle {
+            color: #777;
+            font-size: 14px;
+        }
+
+        .content {
+            padding: 30px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .card {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 5px solid #764ba2;
+        }
+
+        .card h2 {
+            margin-top: 0;
+            font-size: 18px;
+            color: #764ba2;
+        }
+
+        .card p {
+            margin: 6px 0;
+            color: #444;
+            font-size: 14px;
+        }
+
+        .label {
+            font-weight: 600;
+            color: #333;
+        }
+
+        .about {
+            grid-column: span 2;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: #fafafa;
+            font-size: 13px;
+            color: #888;
+        }
+
+        @media (max-width: 768px) {
+            .content {
+                grid-template-columns: 1fr;
+            }
+            .about {
+                grid-column: span 1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="header">
+        <h1>Matrimony Profile</h1>
+    </div>
+
+    <div class="profile-section">
+        <img src="profile.jpg" alt="Profile Photo">
+        <div class="name">Mithun Solomon S P</div>
+        <div class="subtitle">27 • Senior Developer - Infosys • Chennai</div>
+    </div>
+
+    <div class="content">
+
+        <div class="card">
+            <h2>💖 Personal Details</h2>
+            <p><span class="label">Date of Birth:</span> 27 March 1999</p>
+            <p><span class="label">Height:</span> 5'10"</p>
+            <p><span class="label">Religion:</span> Christian - TELC</p>
+        </div>
+
+        <div class="card">
+            <h2>🎓 Education & Career</h2>
+            <p><span class="label">Qualification:</span> B.E. Computer Science & Engineering</p>
+            <p><span class="label">Institution:</span> NGP Institute of Technology</p>
+            <p><span class="label">Profession:</span> Senior Associate Consultant</p>
+            <p><span class="label">Company:</span> Infosys Ltd.</p>
+            <p><span class="label">Income:</span> 11 LPA</p>
+        </div>
+
+        <div class="card">
+            <h2>👨‍👩‍👧‍👦 Family Details</h2>
+            <p><span class="label">Father:</span> Prabhakar S - B.E. 
+                                                  Retd. Manager, Ellen Industries, CBE</p>
+            <p><span class="label">Mother:</span> Miranda Porchelvi R - M.A., M.P.Ed., M.A., B.Ed 
+                                                  PG Asst. Economics, GHSS, Kalapatti, CBE </p>
+            <p><span class="label">Elder Sister:</span> Ajitha S P - M.E. Power Electronics
+                                                   Handlooms business</p>
+            <p><span class="label">Brother-in-law:</span> Arun Gabriel K - B.Sc., M.B.A
+                                                   CEO, Incubation centre, Horticulture University, Tirunelvi</p>
+        </div>
+
+        <div class="card about">
+            <h2>🌸 About Me</h2>
+            <p>
+                I'm a modern, easy-going person who loves traveling and exploring new cultures. 
+                Music brings joy and calm to my life. I value mutual respect, understanding, open communication, 
+                and supporting each other’s dreams. I hope to grow together in love and companionship, 
+                and be not just a life partner but also a true friend through all phases of life.
+            </p>
+        </div>
+
+        <div class="card about">
+            <div class="photo-gallery">
+                <img src="photo1.jpg" alt="Photo 1">
+                <img src="photo2.jpg" alt="Photo 2">
+                <img src="photo3.jpg" alt="Photo 3">
+                <img src="photo4.jpg" alt="Photo 4">
+                <img src="photo4.jpg" alt="Photo 5">
+                <img src="photo4.jpg" alt="Photo 6">
+                <img src="photo4.jpg" alt="Photo 7">
+            </div>
+
+            <style>
+            .photo-gallery {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 15px;
+                justify-content: center;
+                margin: 30px 0;
+            }
+
+            .photo-gallery img {
+                width: 180px;
+                height: 180px;
+                object-fit: cover;
+                border-radius: 12px;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                cursor: pointer;
+            }
+
+            .photo-gallery img:hover {
+                transform: scale(1.1); /* Zoom effect */
+                box-shadow: 0 15px 30px rgba(0,0,0,0.2); /* Pop-out shadow */
+                z-index: 2; /* Bring forward */
+            }
+            </style>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        📞 +91-7502956951/ +91-8508131520 
+    </div>
+
+</div>
+
+</body>
+</html>
