@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matrimony Profile</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: #ffffff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 30px;
+            text-align: center;
+            height: 50px;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .profile-section {
+            padding: 30px;
+            text-align: center;
+        }
+
+        .profile-section img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 6px solid #fff;
+            margin-top: -120px;
+            background: #fff;
+            object-fit: cover;
+        }
+
+        .name {
+            margin-top: 15px;
+            font-size: 26px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .subtitle {
+            color: #777;
+            font-size: 14px;
+        }
+
+        .content {
+            padding: 30px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .card {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 5px solid #764ba2;
+        }
+
+        .card h2 {
+            margin-top: 0;
+            font-size: 18px;
+            color: #764ba2;
+        }
+
+        .card p {
+            margin: 6px 0;
+            color: #444;
+            font-size: 14px;
+        }
+
+        .label {
+            font-weight: 600;
+            color: #333;
+        }
+
+        .about {
+            grid-column: span 2;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: #fafafa;
+            font-size: 13px;
+            color: #888;
+        }
+
+        /* ===== Photo Gallery ===== */
+        .photo-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 45px;
+            justify-content: center;
+        }
+
+        .photo-gallery img {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .photo-gallery img:hover {
+            transform: scale(1.05); /* small zoom on desktop hover */
+        }
+
+        /* ===== Modal Lightbox ===== */
+        #modal {
+            display: none; /* Hidden by default */
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8); /* dark overlay */
+            justify-content: center;
+            align-items: center;
+            pointer-events: none;
+        }
+
+        #modal.show{
+            display: flex;
+            pointer-events: auto;
+        }
+
+        #modal img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 12px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+            animation: fadeIn 0.3s ease;
+        }
+
+        #modal .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 40px;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        /* ===== Animation ===== */
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+
+        /* ===== Responsive ===== */
+        @media (max-width: 768px) {
+            .photo-gallery img {
+                width: 140px;
+                height: 140px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="header">
+        <!-- <h1>Matrimony Profile</h1> -->
+    </div>
+
+    <div class="profile-section">
+        <img src="Photo_1.jpg" alt="Profile Photo">
+        <div class="name">Mithun Solomon S P</div>
+        <div class="subtitle">27 • Senior Associate Consultant • Chennai</div>
+    </div>
+
+    <div class="content">
+
+        <div class="card">
+            <h2>💖 Personal Details</h2>
+            <p><span class="label">Date of Birth:</span> 27 March 1999</p>
+            <p><span class="label">Height:</span> 5'10"</p>
+            <p><span class="label">Weight:</span> 82 Kg</p>
+            <p><span class="label">Complexion:</span> Wheatish</p>
+            <p><span class="label">Native:</span> Irugur, Coimbatore</p>
+            <p><span class="label">Religion:</span> Christian - TELC</p>
+
+        </div>
+
+        <div class="card">
+            <h2>🎓 Education & Career</h2>
+            <p><span class="label">Qualification:</span> B.E. Computer Science & Engineering</p>
+            <p><span class="label">Institution:</span> NGP Institute of Technology</p>
+            <p><span class="label">Profession:</span> Senior Salesforce Developer</p>
+            <p><span class="label">Company:</span> Infosys Ltd.</p>
+            <p><span class="label">Income:</span> 11 LPA</p>
+        </div>
+
+        <div class="card">
+            <h2>👨‍👩‍👧‍👦 Family Details</h2>
+            <p><span class="label">Father:</span> Prabhakar S - B.E. <br>
+                                                  Retd. Manager, Ellen Industries, CBE</p>
+            <p><span class="label">Mother:</span> Miranda Porchelvi R - M.A., M.P.Ed., M.A., B.Ed <br>
+                                                  PG Asst. Economics, GHSS, Kalapatti, CBE </p>
+            <p><span class="label">Elder Sister:</span> Ajitha S P - M.E. Power Electronics <br>
+                                                   Handlooms business</p>
+            <p><span class="label">Brother-in-law:</span> Arun Gabriel K - B.Sc., M.B.A <br>
+                                                   CEO, Incubation centre, Horticulture University, Tirunelvi</p>
+        </div>
+
+        <div class="card about">
+            <h2>🌸 About Me</h2>
+            <p style="text-align: justify;">
+                I'm a modern, easy-going person who loves traveling and exploring new cultures. 
+                Music brings joy and calm to my life. I value mutual respect, understanding, open communication, 
+                and supporting each other’s dreams. I hope to grow together in love and companionship, 
+                and be not just a life partner but also a true friend through all phases of life.
+            </p>
+        </div>
+
+        <div class="card about">
+            <div class="photo-gallery">
+                <!-- <div class="photo-wrapper"> -->
+                    <img src="Photo_1.jpg" alt="Photo 1" onclick="openModal(this.src)">
+                <!-- </div> -->
+                <!-- <div class="photo-wrapper"> -->
+                    <img src="Photo_2.jpg" alt="Photo 2" onclick="openModal(this.src)">
+                <!-- </div> -->
+                <!-- <div class="photo-wrapper"> -->
+                    <img src="Photo_3.jpg" alt="Photo 3" onclick="openModal(this.src)">
+                <!-- </div> -->
+                <!-- <div class="photo-wrapper"> -->
+                    <img src="Photo_4.jpg" alt="Photo 4" onclick="openModal(this.src)">
+                <!-- </div> -->
+                <!-- <div class="photo-wrapper"> -->
+                    <img src="Photo_5.jpeg" alt="Photo 5" onclick="openModal(this.src)">
+                <!-- </div> -->
+                <!-- <div class="photo-wrapper"> -->
+                    <img src="Photo_7.jpg" alt="Photo 7" onclick="openModal(this.src)">
+                <!-- </div> -->
+                <!-- <div class="photo-wrapper"> -->
+                    <img src="Photo_8.jpg" alt="Photo 8" onclick="openModal(this.src)">
+                <!-- </div> -->
+                <!-- <div class="photo-wrapper"> -->
+                    <img src="Photo_9.jpg" alt="Photo 9" onclick="openModal(this.src)">
+                <!-- </div> -->
+                <!-- <div class="photo-wrapper"> -->
+                    <img src="Photo_10.jpg" alt="Photo 10" onclick="openModal(this.src)">
+                <!-- </div> -->
+            </div>
+
+            <!-- ===== Modal Lightbox ===== -->
+            <div id="modal" onclick="closeModal()">
+                <span class="close" onclick="closeModal(event)">&times;</span>
+                <img id="modal-img" src="">
+            </div>
+
+            <script>
+                function openModal(src) {
+                    const modal = document.getElementById('modal');
+                    document.getElementById('modal-img').src = src;
+                    modal.classList.add('show'); // Show modal
+                }
+
+                function closeModal(event) {
+                    if(event.target.id === 'modal-img') return; // clicking image won't close
+                    document.getElementById('modal').classList.remove('show'); // Hide modal
+                }
+            </script>
+
+            
+        </div>
+
+    </div>
+
+    <div class="footer">
+        📞 Contact: +91-7502956951/ +91-8508131520 <br>
+        <!-- Perfect Instagram Logo -->
+<a href="https://www.instagram.com/the_w.o.l.v.e.r.i.n.e._" target="_blank" title="Instagram">
+  <svg width="48" height="48" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="instagramGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#f09433"/>
+        <stop offset="25%" stop-color="#e6683c"/>
+        <stop offset="50%" stop-color="#dc2743"/>
+        <stop offset="75%" stop-color="#cc2366"/>
+        <stop offset="100%" stop-color="#bc1888"/>
+      </linearGradient>
+    </defs>
+    <!-- Rounded Square Background -->
+    <rect width="512" height="512" rx="128" fill="url(#instagramGradient)"/>
+    <rect width="384" height="384" x="65" y="65" rx="128" fill="none" stroke="#fff" stroke-width="32"/>
+    <!-- Inner Circle (Perfect) -->
+    <!-- <circle cx="256" cy="256" r="96" fill="#fff"/> -->
+    <!-- Outer Ring -->
+    <circle cx="256" cy="256" r="96" fill="none" stroke="#fff" stroke-width="32"/>
+    <!-- Small Top-Right Circle -->
+    <circle cx="372" cy="140" r="28" fill="#fff"/>
+  </svg>
+</a>
+
+
+    </div>
+
+</div>
+
+</body>
+</html>
