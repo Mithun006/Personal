@@ -297,6 +297,14 @@
                     if(event.target.id === 'modal-img') return; // clicking image won't close
                     document.getElementById('modal').classList.remove('show'); // Hide modal
                 }
+                document.addEventListener("keydown", (e) => {
+                if (e.key === "Escape") {
+                    const modal = document.getElementById("modal");
+                    if (modal.classList.contains("show")) {
+                        modal.classList.remove("show");
+                    }
+                }
+                });
             </script>
 
             
@@ -337,6 +345,7 @@
 
 </body>
 </html>
+
 
 
 
